@@ -9,7 +9,7 @@ const Projects = () => {
       shortDescription: "AI-powered platform simplifying smart contract creation",
       fullDescription: "Protochain is an innovative AI-powered platform that revolutionizes smart contract development. It provides an intuitive interface for creating, testing, and deploying smart contracts without extensive coding knowledge, making blockchain development accessible to a wider audience.",
       technologies: ["Web3", "Google Gemini", "React", "Rust", "Tailwind CSS", "Petra Wallet"],
-      image: "../../public/proto.jpg",
+      image: "/public/images/proto.jpg",
       githubLink: "https://github.com/shivamsinghx"
     },
     {
@@ -17,7 +17,7 @@ const Projects = () => {
       shortDescription: "ML-powered address standardization for ISO 20022",
       fullDescription: "An advanced machine learning solution that automates the process of standardizing address data to comply with ISO 20022 and SWIFT MX requirements. The system processes unstructured address data and converts it into standardized formats, significantly reducing manual effort and error rates.",
       technologies: ["Machine Learning", "NLP", "SQL", "API"],
-      image: "../../public/structure.jpg",
+      image: "/public/images/structure.jpg",
       githubLink: "https://github.com/shivamsinghx"
     },
     {
@@ -25,14 +25,14 @@ const Projects = () => {
       shortDescription: "Cloud-native solution for efficient image transformations",
       fullDescription: "A high-performance serverless image processing system built for scale. This solution automatically optimizes, transforms, and delivers images through a global CDN, supporting various transformation operations like resize, crop, format conversion, and quality optimization.",
       technologies: ["Cloud Computing", "Image Processing", "AWS", "APIs", "CDN"],
-      image: "../../public/image.jpg",
+      image: "/public/images/image.jpg",
       githubLink: "https://github.com/shivamsinghx"
     },
     {
       
         title: "View More Projects",
         technologies: ["Parallax", "Any Poster", "solana FE, UI"],
-        image: "../../public/retro1.png",
+        image: "/public/images/retro1.png",
         githubLink: "https://github.com/shivamsinghx"
       
     }
