@@ -12,8 +12,8 @@ const Hero: React.FC = () => {
   
   const currentTheme = mounted ? (theme === 'system' ? resolvedTheme : theme) : 'light';
   const imageUrl = currentTheme === 'dark' 
-    ? "/public/images/dark.jpg"
-    : "/public/images/light.jpg";
+    ? "/images/dark.jpg"
+    : "/images/light.jpg";
 
   return (
     <section className="min-h-screen flex items-center pt-20 dark:bg-neo-navy dark:text-white">
