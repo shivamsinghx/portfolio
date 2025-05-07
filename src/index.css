@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-neo-cream text-neo-black font-sans dark:bg-neo-mint dark:text-white;
+    scroll-behavior: smooth;
+  }
+
+  ::selection {
+    @apply bg-neo-pink text-white dark:bg-neo-lime dark:text-neo-mint;
+  }
+}
+
+@layer components {
+  .neo-container {
+    @apply w-full max-w-7xl mx-auto px-4 md:px-8;
+  }
+  
+  .neo-card {
+    @apply bg-white border-2 border-neo-black rounded-md shadow-neo transition-all duration-300 hover:shadow-neo-hover transform hover:-translate-y-1 dark:bg-neo-navy dark:text-white dark:border-neo-lime/40 dark:shadow-neo-dark;
+  }
+  
+  .neo-button {
+    @apply bg-neo-yellow border-2 border-neo-black rounded-md py-2 px-4 font-bold shadow-neo-sm transition-all duration-300 hover:shadow-neo hover:-translate-y-1 dark:border-neo-lime dark:text-white;
+  }
+  
+  .section-title {
+    @apply text-4xl md:text-5xl font-bold mb-8 relative inline-block dark:text-neo-lime;
+  }
+
+  .glassmorphism {
+    @apply backdrop-blur-md bg-white/10 px-3 py-1 rounded-md border border-white/20;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+section {
+  @apply py-16 md:py-24;
+}
+
+/* Added animation for dark mode transition */
+* {
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-duration: 300ms;
+}
+
+/* Dark mode text improvements */
+.dark .prose {
+  color: white;
+}
+
+.dark .prose p, 
+.dark .prose h1, 
+.dark .prose h2, 
+.dark .prose h3, 
+.dark .prose h4, 
+.dark .prose strong {
+  color: white;
+}
+
+.dark .neo-card p,
+.dark .neo-card h3 {
+  color: white;
+}
+
+/* Add some dark mode specific styles */
+.dark .card-highlight {
+  @apply border-neo-lime bg-gradient-to-br from-neo-navy to-neo-darkblue;
+}
+
+.dark .text-highlight {
+  @apply text-neo-softpurple font-medium;
+}
+
+/* River Animation */
+@keyframes riverFlow {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(2);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(2.5);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(2);
+  }
+}
+
+@layer utilities {
+  .animate-river-flow {
+    animation: riverFlow 20s linear infinite;
+    top: 50%;
+    left: 50%;
+  }
+  .animate-river-flow-delayed {
+    animation: riverFlow 20s linear infinite;
+    animation-delay: -10s;
+    top: 50%;
+    left: 50%;
+  }
+}
